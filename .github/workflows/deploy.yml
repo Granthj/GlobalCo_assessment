@@ -1,42 +1,10 @@
-name: Job Board CI/CD
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      # 1. Get code from GitHub
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      # 2. Install Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      # 3. Install Frontend dependencies
-      - name: Install Frontend dependencies
+- name: Deploy to Vercel
         working-directory: Frontend
-        run: npm install
-
-      # 4. Build Frontend
-      - name: Build Frontend
-        working-directory: Frontend
-        run: npm run build
-
-      # 5. Install Backend dependencies
-      - name: Install Backend dependencies
-        working-directory: Backend
-        run: npm install
-
-      # 6. Deploy to Vercel
-      - name: Deploy to Vercel
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
           npm install --global vercel
-          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+          vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+          vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
