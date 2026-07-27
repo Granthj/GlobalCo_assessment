@@ -31,6 +31,7 @@ export default function JobDetail() {
     });
   };
 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
