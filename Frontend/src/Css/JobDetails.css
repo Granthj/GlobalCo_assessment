@@ -1,0 +1,131 @@
+.job-detail__back {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-4);
+  transition: color 0.15s ease;
+}
+
+.job-detail__back:hover {
+  color: var(--color-teal);
+}
+
+.job-detail__header {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.job-detail__title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-2);
+}
+
+.job-detail__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-2);
+  font-size: 0.9375rem;
+  color: var(--color-ink-soft);
+}
+
+.job-detail__company {
+  font-weight: 600;
+  color: var(--color-teal-dark);
+}
+
+.job-detail__desc {
+  white-space: pre-wrap;
+  line-height: 1.7;
+  margin-bottom: var(--space-6);
+}
+
+.apply-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+
+.apply-card__heading {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+
+.form-field label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-ink-soft);
+}
+
+.form-field input {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.75rem;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  transition: border-color 0.15s ease;
+}
+
+.form-field input:focus {
+  border-color: var(--color-teal);
+  outline: none;
+}
+
+.btn-primary {
+  width: 100%;
+  background: var(--color-teal);
+  color: var(--color-paper);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.25rem;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: background 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: var(--color-teal-dark);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-status {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-ink-soft);
+}
+
+.form-status--success {
+  color: var(--color-teal);
+}
+
+.form-status--error {
+  color: var(--color-error);
+}
+
+@media (min-width: 640px) {
+  .job-detail__title {
+    font-size: 2rem;
+  }
+  .apply-card {
+    padding: var(--space-5);
+  }
+}

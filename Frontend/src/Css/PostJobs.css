@@ -1,0 +1,54 @@
+.post-job__heading {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.post-job__subheading {
+  color: var(--color-ink-soft);
+  font-size: 0.9375rem;
+  margin-bottom: var(--space-4);
+}
+
+.post-job__form {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+
+.form-field textarea {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.75rem;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  resize: vertical;
+  min-height: 140px;
+  transition: border-color 0.15s ease;
+}
+
+.form-field textarea:focus {
+  border-color: var(--color-teal);
+  outline: none;
+}
+
+.form-divider {
+  border: none;
+  border-top: 1px dashed var(--color-border);
+  margin: var(--space-4) 0;
+}
+
+.form-field--admin label {
+  color: var(--color-mustard);
+}
+
+@media (min-width: 640px) {
+  .post-job__heading {
+    font-size: 2.25rem;
+  }
+  .post-job__form {
+    padding: var(--space-5);
+  }
+}
