@@ -26,3 +26,5 @@ db.sync().then(()=>{
         console.log('Connected to server 3000');
     });
 });
+
+module.exports = app;
