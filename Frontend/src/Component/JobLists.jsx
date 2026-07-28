@@ -1,4 +1,4 @@
-import React,{ useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getJobs } from '../../api/client.js';
 import '../Css/JobLists.css';
@@ -6,20 +6,18 @@ import '../Css/JobLists.css';
 export default function JobList() {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     getJobs()
       .then(setJobs)
       .catch((err) => {
-        console.log(err,'here');
-        setError(err.message)
+        console.log(err, 'here');
+        setJobs([]); // treat any fetch failure as "no jobs" instead of an error
       })
       .finally(() => setLoading(false));
   }, []);
 
   if (loading) return <p className="state-message">Loading jobs…</p>;
-  if (error) return <p className="state-message state-message--error">Error: {error}</p>;
 
   return (
     <div className="job-list">
