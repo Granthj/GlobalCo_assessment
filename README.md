@@ -34,12 +34,16 @@ GlobalCo_assessment/
 │   ├── Utils/db.js      Sequelize connection instance
 │   └── app.js           Express app entry point
 ├── Frontend/
+│   ├── index.html
 │   ├── api/
 │   │   └── client.js     all frontend API calls
 │   └── src/
 │       ├── Component/   JobList, JobDetail, PostJob
+│       ├── Css/         per-page stylesheets
 │       ├── App.jsx       routing
-│       └── main.jsx      React entry point
+│       ├── App.css       styles for App.jsx
+│       ├── main.jsx      React entry point
+│       └── main.css      global styles for main.jsx
 └── .github/workflows/   CI/CD pipeline definitions
 ```
 
