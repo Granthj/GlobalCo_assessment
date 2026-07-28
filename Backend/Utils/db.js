@@ -1,6 +1,8 @@
 require('dotenv').config();
 
 const { Sequelize } = require('sequelize');
+require('pg');
+require('pg-hstore');
 const sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
