@@ -11,7 +11,10 @@ export default function JobList() {
   useEffect(() => {
     getJobs()
       .then(setJobs)
-      .catch((err) => setError(err.message))
+      .catch((err) => {
+        console.log(err,'here');
+        setError(err.message)
+      })
       .finally(() => setLoading(false));
   }, []);
 
